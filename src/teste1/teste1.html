@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="teste1.css">
+  </head>
+  <body>
+    <form id="form" class="modal-teste" onsubmit="return savePlayer()">
+      <div class="form-group">
+        <label for="input-nome">Nome</label><br>
+        <input type="text" id="input-nome" required>
+      </div>
+      <div class="form-group">
+        <label for="input-idade">Idade</label><br>
+        <input type="number" id="input-idade" required>
+      </div>
+      <div class="form-group">
+        <label for="input-sexo">Sexo</label><br>
+        <select id="input-sexo" required>
+          <option value="Feminino">Feminino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Outro">Outro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input-escolaridade">Nível de escolaridade</label><br>
+        <select id="input-escolaridade" required>
+          <option value="Fundamental incompleto">Fundamental incompleto</option>
+          <option value="Fundamental">Fundamental</option>
+          <option value="Médio">Médio</option>
+          <option value="Graduação">Graduação</option>
+          <option value="Pós-graduação">Pós-graduação</option>
+          <option value="Mestrado">Mestrado</option>
+          <option value="Doutorado">Doutorado</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input-estudo">Anos de estudo</label><br>
+        <input type="number" id="input-estudo" required>
+      </div>
+      <div class="form-group">
+        <label for="input-mao">Mão dominante</label><br>
+        <select id="input-mao" required>
+          <option value="Destro">Destro</option>
+          <option value="Canhoto">Canhoto</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input-oculos">Usa óculos de grau</label><br>
+        <select id="input-oculos" required>
+          <option value="Sim">Sim</option>
+          <option value="Não">Não</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="input-dificuldade">Tipo de dificuldade visual</label><br>
+        <input type="text" id="input-dificuldade">
+      </div>
+      <div class="form-group">
+        <label for="input-oe">Grau em olho esquerdo</label><br>
+        <input type="text" id="input-oe">
+      </div>
+      <div class="form-group">
+        <label for="input-od">Grau em olho direito</label><br>
+        <input type="text" id="input-od">
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+      <a href="../../index.html" class="btn btn-danger">Voltar</a>
+    </form>
+
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script type="text/javascript" src="../../assets/js/jquery.js"></script>
+    <script type="text/javascript" src="../../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/input.js"></script>
+    <script type="text/javascript" src="../../env.js"></script>
+    <script src="../../assets/highcharts/highcharts.js"></script>
+    <script src="../../assets/highcharts/exporting.js"></script>
+    <script src="../../assets/highcharts/export-data.js"></script>
+    <script src="../../assets/highcharts/accessibility.js"></script>
+    <script type="text/javascript" src="teste1.js"></script>
+    <script>if (window.module) module = window.module;</script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "name": "clinica-vivaz",
+  "version": "2.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder -p never --win",
+    "pack": "electron-builder --dir"
+  },
+  "keywords": [
+    "cognição"
+  ],
+  "author": "Luidi Matheus",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.0.0",
+    "electron-builder": "^22.8.0"
+  },
+  "dependencies": {
+    "electron-json-storage": "^4.2.0",
+    "electron-reload": "^1.5.0",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.7.1",
+    "material-design-icons": "^3.0.1",
+    "print-js": "^1.5.0",
+    "zip-a-folder": "^1.1.0"
+  },
+  "build": {
+    "asar": "true",
+    "extraFiles": [
+      "db/**/*",
+      "db-backup/**/*"
+    ],
+    "appId": "br.com.luidi",
+    "extraResources": [
+      {
+        "from": "db",
+        "to": "app/db"
+      },
+      {
+        "from": "db-backup",
+        "to": "app/db-backup"
+      }
+    ],
+    "win": {
+      "publisherName": "Trinity InfoSystem",
+      "publish": [
+        "github"
+      ],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    }
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}
