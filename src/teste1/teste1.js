@@ -63,7 +63,7 @@ function savePlayer() {
       try {
         var data3 = fs.writeFileSync(dbPath+'env.json', JSON.stringify({id_count: id_count}));
         $('#form').toggle();
-        $('#tool-bar-default').toggle();
+        $('#test').toggle();
       } catch (err) {
         console.log(err);
       }

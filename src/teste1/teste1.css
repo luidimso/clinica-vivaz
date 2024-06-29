@@ -2,3 +2,22 @@ body {
   background: skyblue;
   padding: 50px;
 }
+
+.modal-teste {
+  margin: auto;
+  background-color: white;
+  width: 250px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#test {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+select {
+  margin-right: 50px;
+}
