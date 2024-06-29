@@ -21,3 +21,16 @@ body {
 select {
   margin-right: 50px;
 }
+
+#saved {
+  display: none;
+}
+
+#saved h2 {
+  text-align: center;
+  margin-top: 250px;
+}
+
+#saved h5 {
+  text-align: center;
+}

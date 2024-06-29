@@ -9,6 +9,8 @@ const dbPath = DEV ?
 
 var id_count;
 
+var currentId;
+
 
 $(document).ready(function(){
 
@@ -22,6 +24,7 @@ $(document).ready(function(){
     var data = fs.readFileSync(dbPath+'env.json', 'utf8');
     var env = JSON.parse(data);
     id_count = env.id_count;
+    currentId = env.id_count;
   } catch(err) {
     var env = {
       id_count: 1
@@ -75,4 +78,67 @@ function savePlayer() {
   }
 
   return false;
+}
+
+
+function saveResult() {
+  var data = fs.readFileSync(dbPath+'players.json', 'utf8');
+  var players = JSON.parse(data);
+
+  var result = {
+    pessoal: {
+      valor_pessoal: document.getElementById("1").value,
+      saude: document.getElementById("2").value,
+      autocuidado: document.getElementById("3").value,
+    },
+    interpessoal: {
+      amizade: document.getElementById("4").value,
+      familia: document.getElementById("5").value,
+      intimidade: document.getElementById("6").value,
+    },
+    ocupacional: {
+      estudo: document.getElementById("7").value,
+      trabalho: document.getElementById("8").value,
+      conquistas: document.getElementById("9").value,
+    },
+    material: {
+      independencia_financeira: document.getElementById("10").value,
+      patrimonio: document.getElementById("11").value,
+      qualidade_de_vida: document.getElementById("12").value,
+    },
+    recreativa: {
+      lazer: document.getElementById("13").value,
+      hobbies: document.getElementById("14").value,
+      passatempo: document.getElementById("15").value,
+    },
+    existencial: {
+      metas_de_vida: document.getElementById("16").value,
+      espiritualidade: document.getElementById("17").value,
+      ativismo_ideologico: document.getElementById("18").value,
+    },
+    sono: {
+      dificuldade: document.getElementById("19").value,
+      durmo_bem: document.getElementById("20").value,
+      tenho_pesadelos: document.getElementById("21").value,
+    }
+  }
+
+  players.forEach(p => {
+    if(p.id == currentId) {
+      p.resultados.push(result);
+    }
+  });
+
+  try {
+    var data = fs.writeFileSync(dbPath+'players.json', JSON.stringify(players));
+  } catch (err) {
+    console.log(err);
+  }
+
+  $('#test').toggle();
+  $('#saved').toggle();
+
+  setTimeout(() => {
+    window.location.href = '../../index.html';
+  }, 5000)
 }
