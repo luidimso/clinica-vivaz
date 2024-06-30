@@ -30,7 +30,3 @@ async function downloadDB() {
     a.click();
     document.body.removeChild(a);
 }
-
-function showHiddenTests(){
-    $("#hidden-btns").toggle();
-}

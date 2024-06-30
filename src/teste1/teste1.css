@@ -22,7 +22,7 @@ select {
   margin-right: 50px;
 }
 
-#saved, #results, #btn_voltar {
+#saved, #results, #btn_voltar, #player_result {
   display: none;
 }
 
@@ -47,11 +47,17 @@ select {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  padding: 20px;
   margin: auto;
 }
 
 #results p {
   text-decoration: underline;
   cursor: pointer;
+}
+
+#info {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 50px;
 }

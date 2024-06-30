@@ -11,6 +11,7 @@ var id_count;
 
 var currentId;
 var selectedPlayer;
+var selectedResult;
 
 
 $(document).ready(function(){
@@ -152,6 +153,11 @@ function back() {
   $('#btn_voltar').toggle();
 }
 
+function backFromResult() {
+  $('#form').toggle();
+  $('#player_result').toggle();
+}
+
 
 function showResults() {
   $("#results").empty();
@@ -179,7 +185,38 @@ function selectPlayer (id) {
 
   $("#results").empty();
 
-  selectedPlayer.resultados.forEach(r => {
-    $('#results').append(`<p>${r.data}</p>`);
+  selectedPlayer.resultados.forEach((r, i) => {
+    $('#results').append(`<p onclick='selectResult(${i})'>${r.data}</p>`);
   })
+}
+
+function selectResult(index) {
+  var data = fs.readFileSync(dbPath+'players.json', 'utf8');
+  var players = JSON.parse(data);
+
+  players.forEach(p => {
+    if(p.id == selectedPlayer.id) {
+      selectedResult = selectedPlayer.resultados[index];
+    }
+  });
+
+  $('#results').toggle();
+  $('#btn_voltar').toggle();
+  $('#player_result').toggle();
+
+  $("#info").empty();
+  $("#info").append(`<p>${selectedPlayer.nome}, ${selectedPlayer.idade} anos, sexo ${selectedPlayer.sexo}</p>`);
+  $("#info").append(`<p>Nível de escolaridade: ${selectedPlayer.escolaridade}, ${selectedPlayer.estudo} anos de estudo</p>`);
+  $("#info").append(`<p>Mão dominante: ${selectedPlayer.mao_dominante}</p>`);
+  $("#info").append(`<p>Usa óculos de grau: ${selectedPlayer.usa_oculos}</p>`);
+  $("#info").append(`<p>Tipo de dificuldade visual: ${selectedPlayer.dificuldade_visual}</p>`);
+  $("#info").append(`<p>Grau em olho esquerdo: ${selectedPlayer.grau_oe}</p>`);
+  $("#info").append(`<p>Grau em olho direito: ${selectedPlayer.grau_od}</p>`);
+  $('#info').append(`<p>Realizado em <b>${selectedResult.data}</b></p>`)
+}
+
+function newTest() {
+  currentId = selectedPlayer.id;
+  $('#player_result').toggle();
+  $('#test').toggle();
 }
