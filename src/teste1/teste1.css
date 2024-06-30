@@ -22,7 +22,7 @@ select {
   margin-right: 50px;
 }
 
-#saved {
+#saved, #results, #btn_voltar {
   display: none;
 }
 
@@ -33,4 +33,25 @@ select {
 
 #saved h5 {
   text-align: center;
+}
+
+#btn-results, #btn_voltar { 
+  position: fixed;
+  top: 50px;
+  left: 50px;
+}
+
+
+#results {
+  width: 350px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: auto;
+}
+
+#results p {
+  text-decoration: underline;
+  cursor: pointer;
 }

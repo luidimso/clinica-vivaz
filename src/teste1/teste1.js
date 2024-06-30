@@ -10,6 +10,7 @@ const dbPath = DEV ?
 var id_count;
 
 var currentId;
+var selectedPlayer;
 
 
 $(document).ready(function(){
@@ -120,7 +121,8 @@ function saveResult() {
       dificuldade: document.getElementById("19").value,
       durmo_bem: document.getElementById("20").value,
       tenho_pesadelos: document.getElementById("21").value,
-    }
+    },
+    data: new Date().toLocaleDateString()
   }
 
   players.forEach(p => {
@@ -141,4 +143,43 @@ function saveResult() {
   setTimeout(() => {
     window.location.href = '../../index.html';
   }, 5000)
+}
+
+
+function back() {
+  $('#form').toggle();
+  $('#results').toggle();
+  $('#btn_voltar').toggle();
+}
+
+
+function showResults() {
+  $("#results").empty();
+  $('#form').toggle();
+  $('#results').toggle();
+  $('#btn_voltar').toggle();
+
+  var data = fs.readFileSync(dbPath+'players.json', 'utf8');
+  var players = JSON.parse(data);
+
+  players.forEach(p => {
+    $('#results').append(`<p onclick='selectPlayer(${p.id})'>#${p.id} - ${p.nome}</p>`);
+  });
+}
+
+function selectPlayer (id) {
+  var data = fs.readFileSync(dbPath+'players.json', 'utf8');
+  var players = JSON.parse(data);
+
+  players.forEach(p => {
+    if(p.id == id) {
+      selectedPlayer = p;
+    }
+  });
+
+  $("#results").empty();
+
+  selectedPlayer.resultados.forEach(r => {
+    $('#results').append(`<p>${r.data}</p>`);
+  })
 }

@@ -7,6 +7,8 @@
   </head>
   <body>
     <form id="form" class="modal-teste" onsubmit="return savePlayer()">
+      <button id="btn-results" class="btn btn-success" onclick="showResults()">Resultados</button>
+
       <div class="form-group">
         <label for="input-nome">Nome</label><br>
         <input type="text" id="input-nome" required>
@@ -406,6 +408,10 @@
       <h2>Formulário salvo com sucesso!</h2>
       <h5>Você será redirecionado</h5> 
     </div>
+
+    <button id="btn_voltar" class="btn btn-danger" onclick="back()">Voltar</button>
+
+    <div id="results"></div>
 
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
     <script type="text/javascript" src="../../assets/js/jquery.js"></script>
