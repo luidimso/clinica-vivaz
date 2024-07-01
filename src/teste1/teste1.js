@@ -259,4 +259,170 @@ function makeGraphs() {
   }]
 });
 
+Highcharts.chart('interpessoal', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Interpessoal',
+      align: 'left'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b>'
+  },
+  series: [{
+    name: '',
+    data: [
+        ['Amizade', Number(selectedResult.interpessoal.amizade)],
+        ['Família', Number(selectedResult.interpessoal.familia)],
+        ['Intimidade', Number(selectedResult.interpessoal.intimidade)]
+    ],
+    dataLabels: {
+        enabled: true
+    }
+}]
+});
+
+Highcharts.chart('ocupacional', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Ocupacional',
+      align: 'left'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b>'
+  },
+  series: [{
+    name: '',
+    data: [
+        ['Estudo', Number(selectedResult.ocupacional.estudo)],
+        ['Trabalho', Number(selectedResult.ocupacional.trabalho)],
+        ['Conquistas', Number(selectedResult.ocupacional.conquistas)]
+    ],
+    dataLabels: {
+        enabled: true
+    }
+}]
+});
+
+Highcharts.chart('material', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Material',
+      align: 'left'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b>'
+  },
+  series: [{
+    name: '',
+    data: [
+        ['Indepedência Financeira', Number(selectedResult.material.independencia_financeira)],
+        ['Patrimônio', Number(selectedResult.material.patrimonio)],
+        ['Qualidade de vida', Number(selectedResult.material.qualidade_de_vida)]
+    ],
+    dataLabels: {
+        enabled: true
+    }
+}]
+});
+
+Highcharts.chart('recreativa', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Recreativa',
+      align: 'left'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b>'
+  },
+  series: [{
+    name: '',
+    data: [
+        ['Lazer', Number(selectedResult.recreativa.lazer)],
+        ['Hobbies', Number(selectedResult.recreativa.hobbies)],
+        ['Passatempo', Number(selectedResult.recreativa.passatempo)]
+    ],
+    dataLabels: {
+        enabled: true
+    }
+}]
+});
+
+Highcharts.chart('existencial', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Existencial',
+      align: 'left'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b>'
+  },
+  series: [{
+    name: '',
+    data: [
+        ['Metas de vida', Number(selectedResult.existencial.metas_de_vida)],
+        ['Espiritualidade', Number(selectedResult.existencial.espiritualidade)],
+        ['Ativismo idelógico', Number(selectedResult.existencial.ativismo_ideologico)]
+    ],
+    dataLabels: {
+        enabled: true
+    }
+}]
+});
+
+Highcharts.chart('sono', {
+  chart: {
+      type: 'column'
+  },
+  title: {
+      text: 'Sono',
+      align: 'left'
+  },
+  xAxis: {
+    type: 'category'
+  },
+  tooltip: {
+    pointFormat: '<b>{point.y}</b>'
+  },
+  series: [{
+    name: '',
+    data: [
+        ['Dificuldade', Number(selectedResult.sono.dificuldade)],
+        ['Durmo bem', Number(selectedResult.sono.durmo_bem)],
+        ['Tenho pesadelos', Number(selectedResult.sono.tenho_pesadelos)]
+    ],
+    dataLabels: {
+        enabled: true
+    }
+}]
+});
+
+}
+
+function print() {
+  printJS({printable: selectedPlayer, properties: ['nome', 'idade', 'sexo', 'escolaridade', 'estudo', 'mao_dominante', 'usa_oculos', 'dificuldade_visual', 'grau_od', 'grau_oe', 'resultado'], type: 'json'});
 }
