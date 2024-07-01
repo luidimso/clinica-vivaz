@@ -212,11 +212,51 @@ function selectResult(index) {
   $("#info").append(`<p>Tipo de dificuldade visual: ${selectedPlayer.dificuldade_visual}</p>`);
   $("#info").append(`<p>Grau em olho esquerdo: ${selectedPlayer.grau_oe}</p>`);
   $("#info").append(`<p>Grau em olho direito: ${selectedPlayer.grau_od}</p>`);
-  $('#info').append(`<p>Realizado em <b>${selectedResult.data}</b></p>`)
+  $('#info').append(`<p>Realizado em <b>${selectedResult.data}</b></p>`);
+
+  $('#pessoal').empty();
+  $('#interpessoal').empty();
+  $('#ocupacional').empty();
+  $('#material').empty();
+  $('#recreativa').empty();
+  $('#existencial').empty();
+  $('#sono').empty();
+
+  makeGraphs();
 }
 
 function newTest() {
   currentId = selectedPlayer.id;
   $('#player_result').toggle();
   $('#test').toggle();
+}
+
+function makeGraphs() {
+  Highcharts.chart('pessoal', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Pessoal',
+        align: 'left'
+    },
+    xAxis: {
+      type: 'category'
+    },
+    tooltip: {
+      pointFormat: '<b>{point.y}</b>'
+    },
+    series: [{
+      name: '',
+      data: [
+          ['Valor pessoal', Number(selectedResult.pessoal.valor_pessoal)],
+          ['Saúde', Number(selectedResult.pessoal.saude)],
+          ['Autocuidado', Number(selectedResult.pessoal.autocuidado)]
+      ],
+      dataLabels: {
+          enabled: true
+      }
+  }]
+});
+
 }

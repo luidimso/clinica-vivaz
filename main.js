@@ -22,7 +22,7 @@ function createWindow () {
   win.setMenuBarVisibility(true);
   // const devtools = new BrowserWindow()
   // win.webContents.setDevToolsWebContents(devtools.webContents)
-  // win.webContents.openDevTools({ mode: 'detach' })
+  // win.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
