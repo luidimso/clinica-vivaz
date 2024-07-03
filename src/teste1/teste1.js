@@ -31,6 +31,7 @@ $(document).ready(function(){
     var env = {
       id_count: 1
     }
+    currentId = env.id_count; 
     fs.writeFileSync(dbPath+'env.json', JSON.stringify(env));
     id_count = env.id_count;
   }
@@ -424,5 +425,8 @@ Highcharts.chart('sono', {
 }
 
 function print() {
-  printJS({printable: selectedPlayer, properties: ['nome', 'idade', 'sexo', 'escolaridade', 'estudo', 'mao_dominante', 'usa_oculos', 'dificuldade_visual', 'grau_od', 'grau_oe', 'resultado'], type: 'json'});
+  printJS({
+    printable: "player_result",
+    type: "html"
+  });
 }

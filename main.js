@@ -20,9 +20,9 @@ function createWindow () {
   // and load the index.html of the app.
   win.loadFile('home.html');
   win.setMenuBarVisibility(true);
-  const devtools = new BrowserWindow()
-  win.webContents.setDevToolsWebContents(devtools.webContents)
-  win.webContents.openDevTools()
+  //const devtools = new BrowserWindow()
+  //win.webContents.setDevToolsWebContents(devtools.webContents)
+  //win.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
