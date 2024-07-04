@@ -9,9 +9,9 @@
     "pack": "electron-builder --dir"
   },
   "keywords": [
-    "cognição"
+    "clinica"
   ],
-  "author": "Luidi Matheus",
+  "author": "Luidi",
   "license": "ISC",
   "devDependencies": {
     "electron": "^10.0.0",
@@ -32,7 +32,7 @@
       "db/**/*",
       "db-backup/**/*"
     ],
-    "appId": "br.com.luidi",
+    "appId": "br.com.clinica",
     "extraResources": [
       {
         "from": "db",
@@ -44,7 +44,7 @@
       }
     ],
     "win": {
-      "publisherName": "Trinity InfoSystem",
+      "publisherName": "Clinica Vivaz",
       "publish": [
         "github"
       ],
