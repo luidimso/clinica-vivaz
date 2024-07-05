@@ -13,6 +13,47 @@ var currentId;
 var selectedPlayer;
 var selectedResult;
 
+var colorGradient = [{
+  value: 1,
+  color: '#0000FF'
+},
+{
+    value: 2,
+    color: '#1A00E6'
+},
+{
+    value: 3,
+    color: '#3300CC'
+},
+{
+    value: 4,
+    color: '#4D00B3'
+},
+{
+    value: 5,
+    color: '#660099'
+},
+{
+    value: 6,
+    color: '#800080'
+},
+{
+    value: 7,
+    color: '#990066'
+},
+{
+    value: 8,
+    color: '#B3004D'
+},
+{
+    value: 9,
+    color: '#CC0033'
+},
+{
+    value: 10,
+    color: '#FF0000'
+}];
+
 
 $(document).ready(function(){
 
@@ -256,7 +297,10 @@ function makeGraphs() {
       ],
       dataLabels: {
           enabled: true
-      }
+      },
+      color: 'red',
+      zonesAxis: 'y',
+      zones: colorGradient
   }]
 });
 
@@ -283,7 +327,10 @@ Highcharts.chart('interpessoal', {
     ],
     dataLabels: {
         enabled: true
-    }
+    },
+    color: 'red',
+    zonesAxis: 'y',
+    zones: colorGradient
 }]
 });
 
@@ -310,7 +357,10 @@ Highcharts.chart('ocupacional', {
     ],
     dataLabels: {
         enabled: true
-    }
+    },
+    color: 'red',
+    zonesAxis: 'y',
+    zones: colorGradient
 }]
 });
 
@@ -337,7 +387,10 @@ Highcharts.chart('material', {
     ],
     dataLabels: {
         enabled: true
-    }
+    },
+    color: 'red',
+    zonesAxis: 'y',
+    zones: colorGradient
 }]
 });
 
@@ -364,7 +417,10 @@ Highcharts.chart('recreativa', {
     ],
     dataLabels: {
         enabled: true
-    }
+    },
+    color: 'red',
+    zonesAxis: 'y',
+    zones: colorGradient
 }]
 });
 
@@ -391,7 +447,10 @@ Highcharts.chart('existencial', {
     ],
     dataLabels: {
         enabled: true
-    }
+    },
+    color: 'red',
+    zonesAxis: 'y',
+    zones: colorGradient
 }]
 });
 
@@ -418,7 +477,10 @@ Highcharts.chart('sono', {
     ],
     dataLabels: {
         enabled: true
-    }
+    },
+    color: 'red',
+    zonesAxis: 'y',
+    zones: colorGradient
 }]
 });
 
