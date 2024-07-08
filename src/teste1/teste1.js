@@ -15,43 +15,47 @@ var selectedResult;
 
 var colorGradient = [{
   value: 1,
-  color: '#0000FF'
+  color: '#FF0000'
 },
 {
     value: 2,
-    color: '#1A00E6'
+    color: '#FF0000'
 },
 {
     value: 3,
-    color: '#3300CC'
+    color: '#FF0000'
 },
 {
     value: 4,
-    color: '#4D00B3'
+    color: '#FF0000'
 },
 {
     value: 5,
-    color: '#660099'
+    color: '#FF0000'
 },
 {
     value: 6,
-    color: '#800080'
+    color: '#FF0000'
 },
 {
     value: 7,
-    color: '#990066'
+    color: '#0000FF'
 },
 {
     value: 8,
-    color: '#B3004D'
+    color: '#0000FF'
 },
 {
     value: 9,
-    color: '#CC0033'
+    color: '#0000FF'
 },
 {
     value: 10,
-    color: '#FF0000'
+    color: '#0000FF'
+},
+{
+  value: 11,
+  color: '#0000FF'
 }];
 
 
