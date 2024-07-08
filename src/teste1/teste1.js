@@ -488,6 +488,78 @@ Highcharts.chart('sono', {
 }]
 });
 
+  Highcharts.chart('geral', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: '',
+        align: 'left'
+    },
+    xAxis: {
+      categories: ['Pessoal', 'Interpessoal', 'Ocupacional', 'Material', 'Recreativa', 'Existencial', 'Sono'],
+      crosshair: true,
+      accessibility: {
+        description: ''
+      }  
+    },
+    tooltip: {
+      pointFormat: '<b>{point.y}</b>'
+    },
+    series: [{
+      name: '',
+      data: [
+        ['Valor pessoal', Number(selectedResult.pessoal.valor_pessoal)],
+        ['Amizade', Number(selectedResult.interpessoal.amizade)],
+        ['Estudo', Number(selectedResult.ocupacional.estudo)],
+        ['Indepedência Financeira', Number(selectedResult.material.independencia_financeira)],
+        ['Lazer', Number(selectedResult.recreativa.lazer)],
+        ['Metas de vida', Number(selectedResult.existencial.metas_de_vida)],
+        ['Dificuldade', Number(selectedResult.sono.dificuldade)]        
+      ],
+      dataLabels: {
+          enabled: true
+      },
+      color: 'red',
+      zonesAxis: 'y',
+      zones: colorGradient
+    },{
+      name: '',
+      data: [
+        ['Saúde', Number(selectedResult.pessoal.saude)],
+        ['Família', Number(selectedResult.interpessoal.familia)],
+        ['Trabalho', Number(selectedResult.ocupacional.trabalho)],
+        ['Patrimônio', Number(selectedResult.material.patrimonio)],
+        ['Hobbies', Number(selectedResult.recreativa.hobbies)],
+        ['Espiritualidade', Number(selectedResult.existencial.espiritualidade)],
+        ['Durmo bem', Number(selectedResult.sono.durmo_bem)], 
+      ],
+      dataLabels: {
+          enabled: true
+      },
+      color: 'red',
+      zonesAxis: 'y',
+      zones: colorGradient
+    },{
+      name: '',
+      data: [
+        ['Autocuidado', Number(selectedResult.pessoal.autocuidado)],
+        ['Intimidade', Number(selectedResult.interpessoal.intimidade)],
+        ['Conquistas', Number(selectedResult.ocupacional.conquistas)],
+        ['Qualidade de vida', Number(selectedResult.material.qualidade_de_vida)],
+        ['Passatempo', Number(selectedResult.recreativa.passatempo)],
+        ['Ativismo idelógico', Number(selectedResult.existencial.ativismo_ideologico)],
+        ['Tenho pesadelos', Number(selectedResult.sono.tenho_pesadelos)]
+      ],
+      dataLabels: {
+          enabled: true
+      },
+      color: 'red',
+      zonesAxis: 'y',
+      zones: colorGradient
+    }]
+});
+
 }
 
 function print() {
