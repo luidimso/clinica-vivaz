@@ -1,5 +1,7 @@
 body {  
     text-align: center;
+    color: #ffff6b;
+    text-shadow: 1px 1px black;
 }
   
 .btn {
@@ -47,4 +49,8 @@ body {
 
 .title {
     fill: #ffff6b;
+    transform-origin: left;
+    transform-box:fill-box;
+    transform: scaleX(1.5);
+    transform: scaleY(1.5);
 }
