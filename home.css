@@ -1,7 +1,5 @@
 body {  
     text-align: center;
-    color: #ffff6b;
-    text-shadow: 1px 1px black;
 }
   
 .btn {
@@ -34,23 +32,33 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url("assets/img/cover.PNG");
-    background-color: #B8B4EA;
+    background-color: #7F5F00;
     z-index: 2;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
     padding: 100px 50px;
     text-align: center;
+    text-shadow: 8px 2px #808000;
+    color: black;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 60px;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 150px;
+}
+
+h4 {
+    font-size: 25px;
+    text-shadow: none;
 }
 
 #cover #content {
     margin-top: 100px;
-}
-
-.title {
-    fill: #ffff6b;
-    transform-origin: left;
-    transform-box:fill-box;
-    transform: scaleX(1.5);
-    transform: scaleY(1.5);
 }

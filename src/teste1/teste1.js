@@ -497,7 +497,13 @@ Highcharts.chart('sono', {
         align: 'left'
     },
     xAxis: {
-      categories: ['Pessoal', 'Interpessoal', 'Ocupacional', 'Material', 'Recreativa', 'Existencial', 'Sono'],
+      categories: ['VALOR PESSOAL SAÚDE AUTOCUIDADO', 
+      'INTERPESSOAl AMIZADE FAMÍLIA INTIMIDADE', 
+      'OCUPACIONAL ESTUDO TRABALHO CONQUISTAS', 
+      'MATERIAL IND. FINANCEIRA PATRIMÔNIO QUALIDADE DE VIDA', 
+      'RECREATIVA LAZER HOBY PASSATEMPO', 
+      'EXISTENCIAL METAS DE VIDA ESPIRIRTUALIDADE ATIVISMO IDEOLÓGICO', 
+      'SONO DIFICULDADE DURMO BEM PESADELOS'],
       crosshair: true,
       accessibility: {
         description: ''
